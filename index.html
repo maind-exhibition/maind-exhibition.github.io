@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Maind theses exhibition</title>
+	<meta description="Maind theses exhibition - cover image">
+	<meta author="Giovanni Profeta">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+	<main>
+		<header>
+			<h1 id="title">Maind theses </br/>exhibition</h1>
+		</header>
+		<section id="students"></section>
+		<div class="blob_box">
+				
+			<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 854.6 826.1" style="enable-background:new 0 0 854.6 826.1;" xml:space="preserve">
+
+				<path id="blob_a" d="M619.9,514.5c27.1-2.1,50.6-22.8,68.3-41.3c24.1-25.1,34.5-40,47.8-72.4c11.9-29.2,17.6-64.4,2-94.5 c-15.4-29.6-47.4-49.4-77-61.5c-10-4.1-20.5-7.5-31.3-9.8l-0.8-0.8l-0.5,0.5c-23.6-4.9-48.2-5.1-70.1,2.6 c-33,11.6-54.5,41.5-56.9,76.9c-2.6,37.4,15.2,75.2,28.7,109.6c4.5,11.5,8.9,23.1,12.7,34.8C552.7,489.3,581.2,517.5,619.9,514.5z"
+					/>
+				<path id="blob_b" d="M388.3,66.4c18.5,22,21.1,58.6,28.3,88.8c7.2,30.3,18.9,54.1,22.5,81.7c3.5,27.5-1.1,58.8-18.1,80.4 C404,339,374.7,351,344.4,360c-30.3,9-61.6,15-94.8,12.3c-33.2-2.8-68.3-14.4-90.7-38.1s-32.3-59.6-41.3-97.9 c-9.1-38.2-17.4-78.9-1.4-106.3c16-27.3,56.2-41.3,91.1-55.8s64.3-29.3,96.3-33.2C335.4,37.2,369.8,44.5,388.3,66.4z"/>
+				
+				<path id="blob_c" d="M188,248.9c19.6-67.9,223.1-95,289.7-69.6s10.9,127.2,33.9,185.3c23,58.1,61.8,176.9-42.4,184.1 C365.1,556,138,421.9,188,248.9z"/>
+
+			  	<defs>
+			        <linearGradient id="MyGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+			          <stop offset="0%" stop-color="#d14fdf" />
+			          <stop offset="80%" stop-color="#00b8f0" />
+			          <stop offset="10%" stop-color="#00b8f0" />
+			        </linearGradient>
+			      </defs>
+			</svg>
+
+		</div>
+	</main>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+
+<script type="text/javascript">
+
+	function random(min, max) {
+      	return (Math.random() * (max - min) + min);
+    }
+
+	function animation(){
+		var blob_a = document.getElementById("blob_a");
+		var blob_b = document.getElementById("blob_b");
+		var blob_c = document.getElementById("blob_c");
+
+		var duration = 40;
+
+		var tl3 = new﻿ TimelineMax﻿({ repeat: -1})﻿
+			.to(blob_a, 1, { x: random(0, -500), y: random(-100, 100), scale: random(1, 1.2), rotation: random(40, 80), transformOrigin:"50% 50%"})
+			.to(blob_a, 2, { x: random(100, 200), y: random(300, 600), scale: random(1, 1.2), rotation: random(0, 60), transformOrigin:"50% 50%"})
+			.to(blob_a, 0.5, { x: random(100, -100), y: random(0, 200), scale: random(1, 1.2), rotation: random(0, 30), transformOrigin:"50% 50%"})
+			.yoyo(true)
+			.duration(duration)
+
+		var tl3 = new﻿ TimelineMax﻿({ repeat: -1})﻿
+			.to(blob_b, 1, { x: random(-100, -50), y: random(0, -100), scale: random(0.6, 1), rotation: random(0, 10), transformOrigin:"50% 50%"})
+			.to(blob_b, 0.5, { x: random(-100, 100), y: random(0, 100), scale: random(0.6, 1), rotation: random(0, 60), transformOrigin:"50% 50%"})
+			.to(blob_b, 0.5, { x: random(-100, 100), y: random(-50, -100), scale: random(0.6, 1), rotation: random(0, 20), transformOrigin:"50% 50%"})
+			.delay(random(0, 0.2))
+			.yoyo(true)
+			.duration(duration*2)
+
+		var tl3 = new﻿ TimelineMax﻿({ repeat: -1})﻿
+			.from(blob_c, 1, {scale: random(0.6, 0.8), transformOrigin:"50% 50%", x: random(900, 1000), y: random(-800, -700)})
+			.to(blob_c, 1, {transformOrigin:"50% 50%", rotation: random(60, 80), x: random(100, 400), y: random(800, 900)} )
+			.delay(random(0, 0.2))
+			// .yoyo(true)
+			.duration(duration*3)
+
+	}
+
+	function go_full_screen(){
+		var elem = document.documentElement;
+      	if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+      	} 
+      	else if (elem.msRequestFullscreen) {
+        	elem.msRequestFullscreen();
+      	} 
+      	else if (elem.mozRequestFullScreen) {
+        	elem.mozRequestFullScreen();
+      	} 
+      	else if (elem.webkitRequestFullscreen) {
+        	elem.webkitRequestFullscreen();
+      	}
+    }
+
+    function students(){
+    	const students = [
+    		"",
+    		"Caterine <br/>Apruzzese",
+    		"Alekhya <br/>Batchu",
+    		"Gianfranco <br/>Bertelli",
+    		"Michela <br/>Burzio",
+    		"",
+    		"Nydia <br/>Chavarria <br/>Pimentel",
+    		"Paolo Luciano <br/>Crocé",
+    		"Andrew <br/>Fair",
+    		"Shiran <br/>Hirshberg",
+    		"Silvia <br/>Natale",
+    		"Giorgio <br/>Ratti",
+    		"",
+    		"Christina <br/>Rieder",
+    		"Fabio <br/>Stefanoni",
+    		"Leyla <br/>Tawfik"
+    	]
+
+    	var container = $("#students");
+
+    	function random_names(){
+
+    		container.empty();
+
+	    	for (i = 0; i < 1; i++) { 
+	    		s1 = students[ (Math.round(random(0, 4)) ) ]
+	    		s2 = students[ (Math.round(random(5, 8)) ) ]
+	    		s3 = students[ (Math.round(random(9, 11)) ) ]
+	    		s4 = students[ (Math.round(random(12, 15)) ) ]
+
+	    		var output_1 = "<div>" + s1 + "</div>"
+	    		var output_2 = "<div>" + s2 + "</div>"
+	    		var output_3 = "<div>" + s3 + "</div>"
+	    		var output_4 = "<div>" + s4 + "</div>"
+
+	    		container.append(output_1);
+	    		container.append(output_2);
+	    		container.append(output_3);
+	    		container.append(output_4);
+			}
+    	}
+
+    	random_names();
+    	setInterval(function() {
+			random_names();
+		}, 5000);
+
+    }
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+		animation();
+		students();
+
+		$( "#title" ).click(function() {
+			go_full_screen()
+		});
+	});
+
+</script>
+
+</html>
+
+

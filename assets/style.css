@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  background: rgb(209,79,223);
+  background: linear-gradient(0deg, rgba(209,79,223,1) 0%, rgba(0,184,240,1) 80%, rgba(0,184,240,1) 100%);
+  align-items: top;
+  color: white;
+}
+
+h1 {
+  font-size: 15vh;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 100%;
+  padding: 40px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.blob_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #023F92;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+path {
+  fill-opacity: 0.6;
+  fill: url(#MyGradient);
+}
+
+#students {
+  margin: 10vh 0 0 40px;
+  font-weight: bold;
+  /*z-index: -1;*/
+}
+
+#students div {
+  font-size: 5vh; 
+  width: 20%;
+  float: left;
+  padding: 2% 2.5% 0 0;
+  margin: 0 auto;
+}
